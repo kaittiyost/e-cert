@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <title>E-CERT | Login</title>
+    <%- include('includes/script.ejs') %>
+</head>
+  <body style="font-family: 'Prompt', sans-serif;">
+    <%- include('includes/topbar.ejs') %>
+    <br>
+    <div class="container">
+
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-6 ">
+                <img class="img-fluid mt-4 justify-content-center" src="/assets/images/certificate.png" alt="" srcset="" style="width: 70%; height: auto;">
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3" style="margin-top: 20%;">
+                    <div class="card-header text-lg alert">E-CERT Login</div>
+                    <div class="card-body text-primary shadow">
+                        <input type="text" class="form-control rounded-input mb-2" id="username" placeholder="กรอกชื่อผู้ใช้งาน">
+                        <input type="password" class="form-control rounded-input" id="password" placeholder="กรอกรหัสผ่าน">
+                        <br>
+                        <center>
+                            <button class="btn btn-lg btn-warning rounded-input" id="btn_login"><i class="fal fa-sign-in"></i> เข้าสู่ระบบ</button>
+                        </center>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <%- include('includes/footer.ejs') %>
+    
+  </body>
+</html>

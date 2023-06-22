@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>E-CERT | Add Cert</title>
+    <%- include('includes/script.ejs') %>
+    <script>
+        $(document).ready( async function() {
+            authetication()
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+    <script src="/js/includes/scripts.js"></script>
+</head>
+  <body style="font-family: 'Prompt', sans-serif;">
+      <%- include('includes/topbar.ejs') %>
+    <div class="row">
+        <div class="col-md-3">
+            <%- include('includes/sidebar.ejs') %>
+        </div>
+        <div class="col-md-9">
+            <div class="container mt-3">
+                <h3><a href="/admin/AddCertPage">เพิ่มเกียรติบัตรใหม่</a> | เลือกห้องเรียน </h3>
+                <form action="#">
+                    <img class="mb-3" src="" id="course_img_preview" alt="" width="500">
+                <div class="row d-flex justify-content-center align-items-center" style="width: 80%;">
+                    <div class="col-md">
+                        <div class="card">
+                            <div class="row p-2">
+                                <h3>🏅<%= data[0].name %></h3>
+                                <hr>
+                                <div class="col-md-4">
+                                    <center>
+                                        <img src="/assets/images/cert_template/<%= data[0].template %>" alt="" width="200">
+                                    </center>
+                                </div>
+                                <div class="col-md-8">
+                                  <%= data[0].detail %>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                          <br>
+                            <label class="input-group-text">เลือกห้อง</label>
+                            <select class="js-example-basic-single form-control" name="state">
+                                <option value="0">ทุกห้อง</option>
+                                <option value="0">ทุกห้อง ปวช1</option>
+                                <option value="0">ทุกห้อง ปวช2</option>
+                                <option value="0">ทุกห้อง ปวช3</option>
+                                <option value="1">BCM1/1</option>
+                                <option value="2">BCM1/2</option>
+                                <option value="3">BCM1/3</option>
+                              </select>
+                          <br><br>  
+                          <div class="row">
+                            <div class="col-sm-3 mb-3 mb-sm-0">
+                              <div class="card alert alert-success">
+                                <div class="card-body">
+                                  <h5 class="card-title">BCM 2/12</h5>
+                                  <p class="card-text">ทั้งห้อง</p>
+                                  <a href="#">ลบ</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <div class="card alert alert-success">
+                                <div class="card-body">
+                                  <h5 class="card-title">BCM 2/13</h5>
+                                  <p class="card-text">ทั้งห้อง</p>
+                                  <a href="#">ลบ</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card alert alert-success">
+                                  <div class="card-body">
+                                    <h5 class="card-title">BCM 2/13</h5>
+                                    <p class="card-text">24 คน</p>
+                                    <a href="#">ลบ</a>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                          <br>
+                          <div class="d-flex justify-content-end">
+                            <button type="reset" class="btn btn-lg btn-outline-danger rounded-input">Clear</button>
+                            <button type="button" class="btn btn-lg btn-success rounded-input" id="">ต่อไป</button>
+                          </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>E-CERT | Add Cert</title>
+    <%- include('includes/script.ejs') %>
+    <script>
+      $(document).ready( async function() {
+          authetication()
+      });
+  </script>
+</head>
+  <body style="font-family: 'Prompt', sans-serif;">
+      <%- include('includes/topbar.ejs') %>
+    <div class="row">
+        <div class="col-md-3">
+            <%- include('includes/sidebar.ejs') %>
+        </div>
+        <div class="col-md-9">
+            <div class="container mt-3">
+                <h3>เพิ่มเกียรติบัตรใหม่</h3>
+                <form action="#">
+                    <img class="mb-3" src="" id="course_img_preview" alt="" width="500">
+                <div class="row d-flex justify-content-center align-items-center" style="width: 80%;">
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">🏅</span>
+                            <input type="text" class="form-control" placeholder="ชื่อเกียรติบัตร" id="cert-name" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          
+                          <label for="basic-url" class="form-label">อัปโหลดรูปแบบเกียรติบัตร</label>
+                          <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="cert-template" aria-describedby="basic-addon3" onchange="previewImg(this)">
+                          </div>
+                          
+                          <div class="input-group">
+                            <span class="input-group-text">รายละเอียด</span>
+                            <textarea class="form-control" id="cert-detail" aria-label="With textarea"></textarea>
+                          </div> 
+                          <br>
+                          <br>
+                          <div class="d-flex justify-content-end">
+                            <button type="reset" class="btn btn-lg btn-outline-danger rounded-input">Clear</button>
+                            <button type="button" class="btn btn-lg btn-success rounded-input" id="btn_add-cert-1">ต่อไป</button>
+                          </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+  </body>
+</html>

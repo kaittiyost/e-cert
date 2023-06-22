@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>E-CERT | All Cert</title>
+    <%- include('includes/script.ejs') %>
+
+    <script>
+        $(document).ready( async function () {
+            authentication()
+        })
+    </script>
+</head>
+  <body style="font-family: 'Prompt', sans-serif;">
+      <%- include('includes/topbar.ejs') %>
+    <div class="row">
+        <div class="col-md-3">
+            <%- include('includes/sidebar.ejs') %>
+        </div>
+        <div class="col-md-9">
+            <div class="container mt-3">
+                <h3>All Certificate</h3>
+                <br>
+                <div class="row">
+                  <% data.forEach((cert) => { %>
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                        <div class="card-body">
+                            <img src="/assets/images/cert_template/<%= cert.template %>" style="width:100% ;" alt="" srcset="">
+                        </div>
+                        <div class="card-footer">
+                          <%= cert.name %><div class="badge bg-secondary">Private</div><hr>
+                          <%= cert.date %>
+                        </div>
+                      </div>
+                    </div>
+                  <% }); %>
+
+                   
+                    <!-- <div class="col-sm-3">
+                      <div class="card">
+                        <div class="card-body">
+                            <img src="/assets/images/cert_template/1.jpeg" style="width:100% ;" class="p-2" alt="" srcset="">
+                            การอบรบการพัฒนาเว็บไซต์ด้วย NodeJs <hr>
+                            22/01/2544
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+            </div>
+        </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+  </body>
+</html>
